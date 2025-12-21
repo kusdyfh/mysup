@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Sup - مكملات غذائية مميزة</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="#">
+</head>
+<body>
+    <!-- عناصر خلفية البصرة -->
+    <div class="palm-background">
+        <div class="palm-silhouette" style="right: 10%;"></div>
+        <div class="palm-silhouette" style="right: 30%; width: 120px; height: 180px;"></div>
+        <div class="palm-silhouette" style="right: 50%;"></div>
+        <div class="palm-silhouette" style="right: 70%; width: 130px; height: 190px;"></div>
+        <div class="palm-silhouette" style="right: 90%;"></div>
+    </div>
+    <div class="water-waves"></div>
+    
+    <!-- خلفية متحركة إضافية -->
+    <div class="animated-bg">
+        <div class="bg-particle p1"></div>
+        <div class="bg-particle p2"></div>
+        <div class="bg-particle p3"></div>
+        <div class="bg-particle p4"></div>
+        <div class="bg-particle p5"></div>
+        <div class="bg-particle p6"></div>
+    </div>
+
+    <!-- Header / Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="nav-brand">
+                    <a href="#home" class="logo">
+                        <span class="logo-icon">
+                            <i class="fas fa-capsules"></i>
+                        </span>
+                        <span class="logo-text">my.sup</span>
+                    </a>
+                </div>
+                
+                <div class="nav-menu">
+                    <a href="#home" class="nav-link active">الرئيسية</a>
+                    <a href="#products" class="nav-link">المنتجات</a>
+                    <a href="#about" class="nav-link">من نحن</a>
+                    <a href="#branches" class="nav-link">فروعنا</a>
+                    <a href="#contact" class="nav-link">اتصل بنا</a>
+                </div>
+                
+                <div class="nav-actions">
+                    <button class="cart-btn" id="cart-toggle">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </button>
+                    <button class="menu-toggle" id="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-header">
+            <div class="mobile-logo">
+                <span class="logo-icon">
+                    <i class="fas fa-capsules"></i>
+                </span>
+                <span class="logo-text">my.sup</span>
+            </div>
+            <button class="close-menu" id="close-menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="mobile-menu-links">
+            <a href="#home" class="mobile-nav-link active">
+                <i class="fas fa-home"></i> الرئيسية
+            </a>
+            <a href="#products" class="mobile-nav-link">
+                <i class="fas fa-store"></i> المنتجات
+            </a>
+            <a href="#about" class="mobile-nav-link">
+                <i class="fas fa-building"></i> من نحن
+            </a>
+            <a href="#branches" class="mobile-nav-link">
+                <i class="fas fa-map-marker-alt"></i> فروعنا
+            </a>
+            <a href="#contact" class="mobile-nav-link">
+                <i class="fas fa-envelope"></i> اتصل بنا
+            </a>
+            <a href="#cart" class="mobile-nav-link cart-link">
+                <i class="fas fa-shopping-cart"></i> السلة
+            </a>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-bag"></i> سلة التسوق</h3>
+            <button class="close-cart" id="close-cart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items">
+            <!-- Cart items will be populated by JavaScript -->
+            <div class="empty-cart">
+                <div class="empty-cart-icon">
+                    <i class="fas fa-shopping-basket"></i>
+                </div>
+                <h4>سلة التسوق فارغة</h4>
+                <p>أضف بعض المنتجات للبدء!</p>
+                <a href="#products" class="btn btn-primary">
+                    <i class="fas fa-store"></i> تصفح المنتجات
+                </a>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>المجموع</span>
+                    <span class="cart-subtotal">0 د.ع</span>
+                </div>
+                <div class="summary-row">
+                    <span>الشحن</span>
+                    <span>سيتم حسابه عند الدفع</span>
+                </div>
+                <div class="summary-row total">
+                    <span>الإجمالي</span>
+                    <span class="cart-total">0 د.ع</span>
+                </div>
+            </div>
+            <button class="btn btn-primary btn-checkout" id="checkout-btn">
+                <i class="fab fa-whatsapp"></i> إتمام الطلب عبر واتساب
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text scroll-reveal">
+                        <h1 class="hero-title">زود أدائك</h1>
+                        <h2 class="hero-subtitle">مكملات غذائية مميزة لأداء أفضل</h2>
+                        <p class="hero-description">اكتشف مجموعة مختارة من المكملات الغذائية عالية الجودة المدعومة بالعلم لتحسين صحتك وأدائك الرياضي.</p>
+                        <div class="hero-buttons">
+                            <a href="#products" class="btn btn-primary">
+                                <i class="fas fa-shopping-bag"></i> تسوق الآن
+                            </a>
+                            <a href="https://wa.me/9647866444446" target="_blank" class="btn btn-outline whatsapp-btn">
+                                <i class="fab fa-whatsapp"></i> اطلب عبر واتساب
+                            </a>
+                        </div>
+                        <div class="hero-features">
+                            <div class="feature">
+                                <i class="fas fa-shipping-fast"></i>
+                                <span>شحن مجاني</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-award"></i>
+                                <span>جودة عالية</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-leaf"></i>
+                                <span>مكونات طبيعية</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-image scroll-reveal">
+                        <div class="image-container quality-box basra-wave" id="qualityBox">
+                            <div class="quality-visual" aria-hidden="true">
+                                <div class="blob b1"></div>
+                                <div class="blob b2"></div>
+                                <div class="shine"></div>
+                                <img src="assets/products/mysup-logo.jpg" class="float-logo left" alt="" draggable="false">
+                                <img src="assets/products/mysup-logo.jpg" class="float-logo right" alt="" draggable="false">
+                            </div>
+                            <div class="image-placeholder">
+                                <i class="fas fa-capsules"></i>
+                            </div>
+                            <div class="floating-badge">
+                                <span>جودة مميزة</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="categories">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">تسوق حسب التصنيف</h2>
+                    <p class="section-subtitle">اختر المكملات المناسبة لاحتياجاتك</p>
+                </div>
+                
+                <div class="categories-grid">
+                    <div class="category-card scroll-reveal" data-category="all">
+                        <div class="category-icon">
+                            <i class="fas fa-th-large"></i>
+                        </div>
+                        <h3>جميع المنتجات</h3>
+                        <p>تصفح مجموعتنا الكاملة</p>
+                    </div>
+                    <div class="category-card scroll-reveal" data-category="protein">
+                        <div class="category-icon">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <h3>بروتين</h3>
+                        <p>لتعافي وبناء العضلات</p>
+                    </div>
+                    <div class="category-card scroll-reveal" data-category="preworkout">
+                        <div class="category-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3>قبل التمرين</h3>
+                        <p>لطاقة وأداء أفضل</p>
+                    </div>
+                    <div class="category-card scroll-reveal" data-category="creatine">
+                        <div class="category-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <h3>كرياتين</h3>
+                        <p>لقوة وتحمل أكبر</p>
+                    </div>
+                    <div class="category-card scroll-reveal" data-category="vitamins">
+                        <div class="category-icon">
+                            <i class="fas fa-capsules"></i>
+                        </div>
+                        <h3>فيتامينات</h3>
+                        <p>لصحة وحيوية دائمة</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="products">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">منتجاتنا المميزة</h2>
+                    <p class="section-subtitle">مختارة بعناية لنتائج مثالية</p>
+                </div>
+                
+                <div class="category-filters">
+                    <button class="filter-btn active" data-filter="all">جميع المنتجات</button>
+                    <button class="filter-btn" data-filter="protein">بروتين</button>
+                    <button class="filter-btn" data-filter="preworkout">قبل التمرين</button>
+                    <button class="filter-btn" data-filter="creatine">كرياتين</button>
+                    <button class="filter-btn" data-filter="vitamins">فيتامينات</button>
+                </div>
+                
+                <div class="products-grid">
+                    <!-- Products will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-image scroll-reveal">
+                        <div class="image-container">
+                            <div class="image-placeholder">
+                                <i class="fas fa-building"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-text scroll-reveal">
+                        <h2 class="section-title">من نحن</h2>
+                        <p class="about-description">
+                            نحن في My Sup شركة متخصصة في مجال التغذية الرياضية والمكملات الغذائية. نعمل مع مجموعة مختارة من العلامات التجارية العالمية المعروفة في مجال المكملات الغذائية. منتجاتنا أصلية، معتمدة، ومختارة بعناية وفقاً للمعايير الدولية. نهدف إلى دعم الأداء الرياضي وأنماط الحياة الصحية من خلال منتجات موثوقة.
+                        </p>
+                        <div class="about-features">
+                            <div class="feature-item scroll-reveal">
+                                <div class="feature-icon">
+                                    <i class="fas fa-handshake"></i>
+                                </div>
+                                <div>
+                                    <h4>شراكات عالمية</h4>
+                                    <p>نعمل مع أفضل العلامات التجارية مثل Yava Labs، Applied Nutrition، و Kevin Levrone Signature Series.</p>
+                                </div>
+                            </div>
+                            <div class="feature-item scroll-reveal">
+                                <div class="feature-icon">
+                                    <i class="fas fa-certificate"></i>
+                                </div>
+                                <div>
+                                    <h4>منتجات أصلية معتمدة</h4>
+                                    <p>جميع منتجاتنا أصلية وتم اختبارها لضمان الجودة والفعالية.</p>
+                                </div>
+                            </div>
+                            <div class="feature-item scroll-reveal">
+                                <div class="feature-icon">
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                                <div>
+                                    <h4>دعم الصحة والأداء</h4>
+                                    <p>نسعى لتعزيز الصحة والأداء الرياضي من خلال منتجاتنا عالية الجودة.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Branches Section -->
+        <section id="branches" class="branches">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">فروعنا</h2>
+                    <p class="section-subtitle">يمكنك زيارة أحد فروعنا التالية</p>
+                </div>
+                
+                <div class="branches-content">
+                    <div class="branch-card scroll-reveal">
+                        <div class="branch-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>الفرع الرئيسي</h3>
+                        <div class="branch-address">
+                            <p><i class="fas fa-city"></i> البصرة – الطويسة</p>
+                            <p><i class="fas fa-location-dot"></i> مقابل فلكة العروسة</p>
+                        </div>
+                    </div>
+                    
+                    <div class="branch-card scroll-reveal">
+                        <div class="branch-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>الفرع الثاني</h3>
+                        <div class="branch-address">
+                            <p><i class="fas fa-city"></i> البصرة – الزبير</p>
+                            <p><i class="fas fa-location-dot"></i> الرشيدية</p>
+                            <p><i class="fas fa-building"></i> مقابل مول الزبير</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Checkout Section (Hidden by default) -->
+        <section id="checkout" class="checkout">
+            <div class="container">
+                <div class="checkout-container">
+                    <div class="checkout-header">
+                        <h2 class="section-title">إتمام طلبك</h2>
+                        <p class="section-subtitle">أدخل تفاصيل التوصيل الخاصة بك</p>
+                    </div>
+                    
+                    <div class="checkout-content">
+                        <div class="checkout-form-container">
+                            <form id="checkout-form" class="checkout-form">
+                                <div class="form-section">
+                                    <h3><i class="fas fa-user"></i> المعلومات الشخصية</h3>
+                                    <div class="form-group">
+                                        <label for="name">الاسم الكامل *</label>
+                                        <div class="input-with-icon">
+                                            <i class="fas fa-user"></i>
+                                            <input type="text" id="name" name="name" required placeholder="أدخل اسمك الكامل">
+                                        </div>
+                                        <div class="error-message"></div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="phone">رقم الهاتف *</label>
+                                        <div class="input-with-icon">
+                                            <i class="fas fa-phone"></i>
+                                            <input type="tel" id="phone" name="phone" required placeholder="أدخل رقم هاتفك">
+                                        </div>
+                                        <div class="error-message"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-section">
+                                    <h3><i class="fas fa-map-marker-alt"></i> تفاصيل التوصيل</h3>
+                                    <div class="form-group">
+                                        <label for="city">المدينة / المنطقة</label>
+                                        <div class="input-with-icon">
+                                            <i class="fas fa-city"></i>
+                                            <input type="text" id="city" name="city" placeholder="أدخل مدينتك">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="address">عنوان التوصيل الكامل *</label>
+                                        <div class="input-with-icon">
+                                            <i class="fas fa-home"></i>
+                                            <textarea id="address" name="address" rows="3" required placeholder="أدخل عنوان التوصيل الكامل"></textarea>
+                                        </div>
+                                        <div class="error-message"></div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="notes">ملاحظات الطلب (اختياري)</label>
+                                        <div class="input-with-icon">
+                                            <i class="fas fa-sticky-note"></i>
+                                            <textarea id="notes" name="notes" rows="2" placeholder="تعليمات خاصة، تفضيلات التوصيل، إلخ..."></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-actions">
+                                    <button type="button" class="btn btn-outline" id="back-to-cart">
+                                        <i class="fas fa-arrow-left"></i> العودة للسلة
+                                    </button>
+                                    <button type="submit" class="btn btn-primary whatsapp-btn">
+                                        <i class="fab fa-whatsapp"></i> إتمام الطلب عبر واتساب
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <div class="order-summary">
+                            <div class="summary-header">
+                                <h3><i class="fas fa-receipt"></i> ملخص الطلب</h3>
+                            </div>
+                            <div class="order-items">
+                                <!-- Order items will be populated by JavaScript -->
+                                <div class="empty-order">
+                                    <i class="fas fa-shopping-bag"></i>
+                                    <p>لا توجد منتجات في السلة</p>
+                                </div>
+                            </div>
+                            <div class="order-total">
+                                <div class="total-row">
+                                    <span>الإجمالي</span>
+                                    <span class="total-amount">0 د.ع</span>
+                                </div>
+                            </div>
+                            <div class="whatsapp-info">
+                                <div class="info-icon">
+                                    <i class="fab fa-whatsapp"></i>
+                                </div>
+                                <p>سيتم إرسال طلبك عبر واتساب. ستقوم بمراجعة وإرسال الرسالة لإكمال عملية الشراء.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">اتصل بنا</h2>
+                    <p class="section-subtitle">نحن هنا لمساعدتك في رحلتك مع المكملات الغذائية</p>
+                </div>
+                
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="info-card scroll-reveal">
+                            <div class="info-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <h4>طلبات واتساب</h4>
+                            <p>اطلب مباشرة عبر واتساب لخدمة سريعة</p>
+                            <a href="https://wa.me/9647866444446" target="_blank" class="btn btn-small btn-primary whatsapp-btn">
+                                <i class="fab fa-whatsapp"></i> اطلب الآن
+                            </a>
+                        </div>
+                        
+                        <div class="info-card scroll-reveal">
+                            <div class="info-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <h4>خدمة العملاء</h4>
+                            <p>متاحة من الإثنين إلى الجمعة، 9 صباحًا - 6 مساءً</p>
+                            <a href="tel:+9647866444446" class="contact-link">+964 786 644 4446</a>
+                        </div>
+                        
+                        <div class="info-card scroll-reveal">
+                            <div class="info-icon">
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                            <h4>تابعنا على الإنستغرام</h4>
+                            <p>آخر المنتجات والعروض</p>
+                            <a href="https://www.instagram.com/my.sup/" target="_blank" class="btn btn-small btn-instagram">
+                                <i class="fab fa-instagram"></i> تابعنا
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-icon">
+                            <i class="fas fa-capsules"></i>
+                        </span>
+                        <span class="logo-text">my.sup</span>
+                    </div>
+                    <p class="brand-tagline">مكملات غذائية مميزة للصحة واللياقة والعافية</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/my.sup/" target="_blank" class="social-link instagram-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/9647866444446" target="_blank" class="social-link whatsapp-link">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" class="social-link facebook-link">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>روابط سريعة</h4>
+                    <a href="#home">الرئيسية</a>
+                    <a href="#products">المنتجات</a>
+                    <a href="#about">من نحن</a>
+                    <a href="#branches">فروعنا</a>
+                    <a href="#contact">اتصل بنا</a>
+                    <a href="#checkout">إتمام الطلب</a>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>التصنيفات</h4>
+                    <a href="#products" data-filter="all">جميع المنتجات</a>
+                    <a href="#products" data-filter="protein">بروتين</a>
+                    <a href="#products" data-filter="preworkout">قبل التمرين</a>
+                    <a href="#products" data-filter="creatine">كرياتين</a>
+                    <a href="#products" data-filter="vitamins">فيتامينات</a>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>معلومات الاتصال</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> البصرة - العراق</p>
+                    <p><i class="fas fa-phone"></i> +964 786 644 4446</p>
+                    <p><i class="fab fa-whatsapp"></i> 0786 644 4446</p>
+                    <p><i class="fab fa-instagram"></i> my.sup</p>
+                    <p><i class="fas fa-clock"></i> الإثنين-الجمعة: 9ص-6م</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2023 My Sup. جميع الحقوق محفوظة.</p>
+                <p class="demo-note">
+                    <i class="fas fa-code"></i> 
+                    هذا الموقع تجريبي وعرض أولي 
+                    <span class="developer">من قبل التقني علي فالح</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
